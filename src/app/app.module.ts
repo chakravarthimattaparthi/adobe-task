@@ -13,7 +13,6 @@ import { ListingPageComponent } from './listing-page/listing-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ServiceService} from './services/service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { RangeSliderModule  } from 'ngx-rangeslider-component';
 import { NouisliderModule } from 'ng2-nouislider';
 
 
@@ -35,7 +34,6 @@ import { FormsModule } from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RangeSliderModule,
     FormsModule,
     NouisliderModule
   ],

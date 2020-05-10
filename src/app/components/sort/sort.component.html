@@ -1,5 +1,5 @@
 <div class="sort-wrapper">
-    <h4 class="title4" (click)="showPopup()"><img *ngIf="innerWidth <= 767" src="../../../assets/content/pointing.svg">Sort</h4>
+    <h4 class="title4" (click)="showPopup()"><img *ngIf="innerWidth <= 767" src="assets/content/pointing.svg">Sort</h4>
     <div class="sort-list" *ngIf="innerWidth > 767">
         <ul>
             <li><span (click)="sort('high')" [ngClass]="sortType == 'high' ? 'avtive' : ''">Price High - Low</span></li>
