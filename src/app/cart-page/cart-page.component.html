@@ -1,0 +1,33 @@
+<app-header (inputKeyFromChild)="getSearchKey($event)"></app-header>
+<div class="cart-wrapper">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="product-list">
+                <div class="order-item-wrapper" *ngFor="let product of finalProducts;let i = index">
+                    <div class="row">
+                        <div class="ordered-product-image col-md-2 col-4">
+                            <img src="../../assets/content/item1.jpg" />
+                        </div>
+                        <div class="ordered-product-details col-md-10 col-8">
+                            <h4 class="product-title">{{product.productName}}</h4>
+                            <span class="price">{{product.productPrice - (product.productPrice * (product.productDiscount / 100)) | currency:"INR"}}</span>
+                            <span class="discount-price">{{product.productPrice | currency:"INR"}}</span>
+                            <span class="discount">{{product.productDiscount}}%</span>
+                            <div class="add-removeitem"><span class="add" (click)="increase(i,'decrease')">-</span><span class="item-count">{{product.productCount}}</span><span class="add" (click)="increase(i,'increase')">+</span></div>
+                            <div class="removeitem" (click)="increase(i,'remove')">Remove</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="no-items" *ngIf="finalProducts.length == 0">There is no cart items</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="order-details-wrapper">
+                <h2 class="title2">PRICE DETAILS</h2>
+                <div class="values"><span class="label">Price ({{productsList.length}} Items)<span class="seperator">:</span></span><span class="value"> ₹{{totalPrice}}</span></div>
+                <div class="values"><span class="label">Discount<span class="seperator">:</span></span><span class="value"> ₹{{totalDiscount}}</span></div>
+                <div class="total-wrapper"><span class="label">Total Payble</span><span class="value"> ₹{{totalPrice - totalDiscount}}</span></div>
+            </div>
+        </div>
+    </div>

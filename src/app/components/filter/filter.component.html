@@ -1,0 +1,25 @@
+<div class="siderbar-wrapper">
+    <h4 class="title4" (click)="showPopup()"><img *ngIf="innerWidth <= 767" src="../../../assets/content/tools-and-utensils.svg">Filters</h4>
+    <ng-container *ngIf="innerWidth > 767">
+        <div class="price-slider">
+            <span class="start-price"> ₹{{startPrice}}</span><span class="end-price"> ₹{{endPrice}}</span>
+            <nouislider [min]="0" [max]="1000" [step]="1" [(ngModel)]="someRange" (ngModelChange)="onChange($event)"></nouislider>
+            <span class="slider-title">Price</span>
+        </div>
+        <button type="button" class="apply-button" (click)="apply()">Apply</button>
+    </ng-container>
+    <div class="sort-list-responsive" *ngIf="showSort && innerWidth <= 767">
+        <div class="inner-wrapper">
+            <h4 class="title4">Filter Options</h4>
+            <div class="price-slider">
+                <span class="start-price"> ₹{{startPrice}}</span><span class="end-price"> ₹{{endPrice}}</span>
+                <nouislider [min]="0" [max]="1000" [step]="1" [(ngModel)]="someRange" (ngModelChange)="onChange($event)"></nouislider>
+                <span class="slider-title">Price</span>
+            </div>
+            <div class="button-wrapper">
+                <span class="cancel-button" (click)="hidepopup()">Cancel</span>
+                <span class="button-apply" (click)="applyFilter()">Apply</span>
+            </div>
+        </div>
+    </div>
+</div>

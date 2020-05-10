@@ -1,0 +1,35 @@
+<div class="sort-wrapper">
+    <h4 class="title4" (click)="showPopup()"><img *ngIf="innerWidth <= 767" src="../../../assets/content/pointing.svg">Sort</h4>
+    <div class="sort-list" *ngIf="innerWidth > 767">
+        <ul>
+            <li><span (click)="sort('high')" [ngClass]="sortType == 'high' ? 'avtive' : ''">Price High - Low</span></li>
+            <li><span (click)="sort('low')" [ngClass]="sortType == 'low' ? 'avtive' : ''">Price Low - High</span></li>
+            <li><span (click)="sort('dicount')" [ngClass]="sortType == 'dicount' ? 'avtive' : ''">Discount</span></li>
+        </ul>
+    </div>
+    <div class="sort-list-responsive" *ngIf="showSort && innerWidth <= 767">
+        <div class="inner-wrapper">
+            <h4 class="title4">Sort Options</h4>
+            <div class="radio-wrapper">
+                <ul>
+                    <li>
+                        <input id="r1" type="radio" name="radio" value="1" (input)="getValue($event)" checked>
+                        <label for="r1">Price High - Low</label>
+                    </li>
+                    <li>
+                        <input id="r2" type="radio" name="radio" value="2" (input)="getValue($event)">
+                        <label for="r2">Price Low - High</label>
+                    </li>
+                    <li>
+                        <input id="r3" type="radio" name="radio" value="3" (input)="getValue($event)">
+                        <label for="r3">Discount</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="button-wrapper">
+                <span class="cancel-button" (click)="hidepopup()">Cancel</span>
+                <span class="button-apply" (click)="applySort()">Apply</span>
+            </div>
+        </div>
+    </div>
+</div>

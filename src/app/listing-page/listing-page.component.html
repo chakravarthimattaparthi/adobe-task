@@ -1,0 +1,12 @@
+<app-header [cartProducts]='cartProducts' (inputKeyFromChild)="getSearchKey($event)"></app-header>
+<section id="body-wrapper">
+    <div class="row">
+        <div class="col-md-2">
+            <app-filter (priceRange)="priceRange($event)"></app-filter>
+        </div>
+        <div class="col-md-10">
+            <app-sort (savedChanges)="getSort($event)"></app-sort>
+            <app-shopping-list [sortType]="sortType" [priceRange]='priceRangeInput' [searchInputKey]="searchInputKey" (addToCartList)="getCartList($event)"></app-shopping-list>
+        </div>
+    </div>
+</section>
