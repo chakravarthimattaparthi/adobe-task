@@ -48,7 +48,7 @@ header {
 }
 
 .right-header img {
-    width: 17px;
+    width: 23px;
     margin: 0px 4px;
     position: relative;
     z-index: 9;
@@ -267,6 +267,7 @@ div[slider]>input[type=range]::-ms-tooltip {
     display: inline-block;
     float: left;
     margin-left: 20px;
+    line-height: 18px;
 }
 
 .sort-list li {
