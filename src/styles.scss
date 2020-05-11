@@ -25,11 +25,12 @@ header {
     border-left: none;
     border-right: none;
     border-top: none;
-    height: 20px;
+    height: 25px;
+    font-size: 14px;
     position: absolute;
     right: 0;
-    top: 6px;
-    padding: 5px 16px 5px 5px;
+    top: -3px;
+    padding: 0px 16px 0px 5px;
     color: #fff;
 }
 
@@ -302,7 +303,7 @@ footer {
 .product-img img {
     width: 100%;
     margin-bottom: 10px;
-    max-height: 193px;
+    max-height: 160px;
 }
 
 .product-title {
